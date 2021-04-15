@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import './style.css';
 import { AuthUserContext } from '../Session';
 import SignOutButton from '../SignOut';
 import * as ROUTES from '../../constants/routes';
@@ -29,11 +29,13 @@ const NavigationAuth = ({ authUser }) => (
     <li>
       <Link to={ROUTES.ACCOUNT}>Account</Link>
     </li>
-    {!!authUser.roles[ROLES.ADMIN] && (
+
+    {!authUser.roles[ROLES.ADMIN] && (
       <li>
         <Link to={ROUTES.ADMIN}>Admin</Link>
       </li>
     )}
+    
     <li>
       <SignOutButton />
     </li>
@@ -41,14 +43,17 @@ const NavigationAuth = ({ authUser }) => (
 );
 
 const NavigationNonAuth = () => (
-  <ul>
-    <li>
-      <Link to={ROUTES.LANDING}>Landing</Link>
-    </li>
-    <li>
-      <Link to={ROUTES.SIGN_IN}>Sign In</Link>
-    </li>
-  </ul>
+  <div className="mainnav">
+    <ul>
+      <li>
+        <button className="btn"><Link style={{textDecoration:"none"}} to={ROUTES.LANDING}>Landing</Link></button>
+      </li>
+      <li>
+        <button className="btn"><Link style={{textDecoration:"none"}} to={ROUTES.SIGN_IN}>Sign In</Link></button>
+      </li>
+    </ul>
+  </div>
 );
+
 
 export default Navigation;

@@ -15,7 +15,7 @@ const config = {
     projectId: "app1-6ca80",
     storageBucket: "app1-6ca80.appspot.com",
     messagingSenderId: "1032405208135",
-    databaseURL: "https://react-firebase-auth-6270e.firebaseio.com",
+    databaseURL: "https://app1-6ca80-default-rtdb.firebaseio.com/",
     appId: "1:1032405208135:web:c479f6f4dc79718ed8b562"
 };
 

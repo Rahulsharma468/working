@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
-
+import './style.css';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 import * as ROLES from '../../constants/roles';
 
 const SignUpPage = () => (
-  <div>
-    <h1>SignUp</h1>
+  <div className="maindiv2">
+    <h1>Sign Up</h1>
     <SignUpForm />
   </div>
 );
@@ -100,58 +100,29 @@ class SignUpFormBase extends Component {
       username === '';
 
     return (
-      <form onSubmit={this.onSubmit}>
-        <input
-          name="username"
-          value={username}
-          onChange={this.onChange}
-          type="text"
-          placeholder="Full Name"
-        />
-        <input
-          name="email"
-          value={email}
-          onChange={this.onChange}
-          type="text"
-          placeholder="Email Address"
-        />
-        <input
-          name="passwordOne"
-          value={passwordOne}
-          onChange={this.onChange}
-          type="password"
-          placeholder="Password"
-        />
-        <input
-          name="passwordTwo"
-          value={passwordTwo}
-          onChange={this.onChange}
-          type="password"
-          placeholder="Confirm Password"
-        />
-        <label>
-          Admin:
-          <input
-            name="isAdmin"
-            type="checkbox"
-            checked={isAdmin}
-            onChange={this.onChangeCheckbox}
-          />
-        </label>
-        <button disabled={isInvalid} type="submit">
-          Sign Up
-        </button>
-
-        {error && <p>{error.message}</p>}
-      </form>
+      <div className="maindivd">
+        <form onSubmit={this.onSubmit} className="form">
+          <input className="input" name="username" value={username} onChange={this.onChange} type="text"  placeholder="Full Name"/><br />
+          <input className="input" name="email"  value={email} onChange={this.onChange}type="text" placeholder="Email Address"/><br />
+          <input className="input" name="passwordOne" value={passwordOne} onChange={this.onChange} type="password" placeholder="Password" /><br />
+          <input className="input" name="passwordTwo"value={passwordTwo}onChange={this.onChange} type="password" placeholder="Confirm Password"/><br /><br />
+          <label className="ckl"> Admin:
+            <input className="chk" name="isAdmin" type="checkbox" checked={isAdmin} onChange={this.onChangeCheckbox}/>
+          </label><br /><br />
+          <button disabled={isInvalid} type="submit" className="btn">Sign Up</button>
+          {error && <p>{error.message}</p>}
+        </form>
+      </div>
     );
   }
 }
 
 const SignUpLink = () => (
-  <p>
-    Don't have an account? <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
-  </p>
+  <div className="sig">
+    <p>
+      Don't have an account? <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
+    </p>
+  </div>
 );
 
 const SignUpForm = compose(

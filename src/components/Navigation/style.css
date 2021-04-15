@@ -1,0 +1,23 @@
+.mainnav{
+    width: 100%;
+    height: 100%;
+}
+
+.mainnav ul{
+    text-decoration: none;
+}
+
+.mainnav ul li{
+  display: inline;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+
+}
+
+.mainnav ul li .btn{
+    padding:15px ;
+    border: 2px solid red;
+    border-radius: 12px;
+}
+

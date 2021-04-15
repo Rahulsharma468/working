@@ -1,0 +1,45 @@
+.sig{
+    text-align: center;
+}
+
+.maindivd{
+    font-size: large;
+    display: block;
+  }
+  .maindivd .form{
+    display: block;
+    text-align: center;
+  }
+  .maindivd .form .input {
+    width: 40%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid none;
+    border-radius: 12px;
+  }
+  
+  .maindivd .form .btn{
+    padding: 12px;
+    border: 2px solid aqua;
+    border-radius: 12px;
+  }
+  
+  
+  .ggldiv{
+    padding-top: 20px;
+    display: block;
+    text-align: center; 
+  }
+  
+  .ggldiv .btn1{
+    padding: 12px;
+    border: 2px solid aqua;
+    border-radius: 12px;
+  }
+  
+  .maindiv2 h1{
+    text-align: center;
+    font-weight: 400;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
