@@ -19,27 +19,28 @@ const Navigation = () => (
 );
 
 const NavigationAuth = ({ authUser }) => (
-  <ul>
-    <li>
-      <Link to={ROUTES.LANDING}>Landing</Link>
-    </li>
-    <li>
-      <Link to={ROUTES.HOME}>Home</Link>
-    </li>
-    <li>
-      <Link to={ROUTES.ACCOUNT}>Account</Link>
-    </li>
-
-    {!authUser.roles[ROLES.ADMIN] && (
+ <div className="mainnav">
+    <ul>
       <li>
-        <Link to={ROUTES.ADMIN}>Admin</Link>
+      <button className="btn"><Link style={{textDecoration:"none"}} to={ROUTES.LANDING}>Landing</Link></button>
       </li>
-    )}
-    
-    <li>
-      <SignOutButton />
-    </li>
+      <li>
+      <button className="btn"><Link style={{textDecoration:"none"}} to={ROUTES.HOME}>Home</Link></button>
+      </li>
+      <li>
+      <button className="btn"><Link style={{textDecoration:"none"}} to={ROUTES.ACCOUNT}>Account</Link></button>
+      </li>
+      <li>
+      <button className="btn"><Link style={{textDecoration:"none"}} to={ROUTES.ACCOUNT}>POST</Link></button>
+      </li>
+      {!authUser.roles[ROLES.ADMIN] && (
+        <li>
+          <button className="btn"><Link style={{textDecoration:"none"}} to={ROUTES.ADMIN}>Admin</Link></button>
+        </li>
+      )}
+      <button><SignOutButton /></button>
   </ul>
+ </div>
 );
 
 const NavigationNonAuth = () => (
