@@ -36,8 +36,6 @@ class Firebase {
     /* Social Sign In Method Provider */
 
     this.googleProvider = new app.auth.GoogleAuthProvider();
-    this.facebookProvider = new app.auth.FacebookAuthProvider();
-    this.twitterProvider = new app.auth.TwitterAuthProvider();
   }
 
   // *** Auth API ***
@@ -51,20 +49,15 @@ class Firebase {
   doSignInWithGoogle = () =>
     this.auth.signInWithPopup(this.googleProvider);
 
-  doSignInWithFacebook = () =>
-    this.auth.signInWithPopup(this.facebookProvider);
-
-  doSignInWithTwitter = () =>
-    this.auth.signInWithPopup(this.twitterProvider);
 
   doSignOut = () => this.auth.signOut();
 
   doPasswordReset = email => this.auth.sendPasswordResetEmail(email);
 
-  doSendEmailVerification = () =>
-    this.auth.currentUser.sendEmailVerification({
-      url: process.env.REACT_APP_CONFIRMATION_EMAIL_REDIRECT,
-    });
+  // doSendEmailVerification = () =>
+  //   this.auth.currentUser.sendEmailVerification({
+  //     url: process.env.REACT_APP_CONFIRMATION_EMAIL_REDIRECT,
+  //   });
 
   doPasswordUpdate = password =>
     this.auth.currentUser.updatePassword(password);
@@ -106,11 +99,11 @@ class Firebase {
 
   users = () => this.db.ref('users');
 
-  // *** Message API ***
+  // // *** Message API ***
 
-  message = uid => this.db.ref(`messages/${uid}`);
+  // message = uid => this.db.ref(`messages/${uid}`);
 
-  messages = () => this.db.ref('messages');
+  // messages = () => this.db.ref('messages');
 }
 
 export default Firebase;
