@@ -1,6 +1,7 @@
 import app from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
+import firebase from "firebase";
 
 const config = {
   // apiKey: process.env.REACT_APP_API_KEY,
@@ -10,19 +11,22 @@ const config = {
   // storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
   // messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
 
-   apiKey: "AIzaSyAYH7Pc8ix5B0qQiBwiDuJMUrVKGEb2oYY",
-    authDomain: "app1-6ca80.firebaseapp.com",
-    projectId: "app1-6ca80",
-    storageBucket: "app1-6ca80.appspot.com",
-    messagingSenderId: "1032405208135",
-    databaseURL: "https://app1-6ca80-default-rtdb.firebaseio.com/",
-    appId: "1:1032405208135:web:c479f6f4dc79718ed8b562"
+  apiKey: "AIzaSyAAJ-67Vk5_sNsVcvs0z1SlB650yvvrMVM",
+  authDomain: "webh-9db65.firebaseapp.com",
+  databaseURL: "https://webh-9db65-default-rtdb.firebaseio.com",
+  projectId: "webh-9db65",
+  storageBucket: "webh-9db65.appspot.com",
+  messagingSenderId: "30936486015",
+  appId: "1:30936486015:web:fff971005d68070729af4a"
 };
 
+app.initializeApp(config);
+//const firebaseApp = firebase.initializeApp(config)
+const dba = app.firestore();//firebaseApp.firestore();
 class Firebase {
   constructor() {
-    app.initializeApp(config);
-
+    
+    
     /* Helper */
 
     this.serverValue = app.database.ServerValue;
@@ -32,9 +36,9 @@ class Firebase {
 
     this.auth = app.auth();
     this.db = app.database();
+    this.dbs = app.firestore();
 
     /* Social Sign In Method Provider */
-
     this.googleProvider = new app.auth.GoogleAuthProvider();
   }
 
@@ -106,4 +110,5 @@ class Firebase {
   // messages = () => this.db.ref('messages');
 }
 
+export {dba};
 export default Firebase;
