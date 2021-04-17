@@ -8,6 +8,7 @@ import PasswordForgetPage from '../PasswordForget';
 import HomePage from '../Home';
 import AccountPage from '../Account';
 import AdminPage from '../Admin';
+import Post_form from '../form';
 import './style.css'
 
 import * as ROUTES from '../../constants/routes';
@@ -23,6 +24,7 @@ const App = () => (
           path={ROUTES.PASSWORD_FORGET}
           component={PasswordForgetPage}
         />
+        <Route path={ROUTES.POST_FORM} component={Post_form} />
         <Route path={ROUTES.HOME} component={HomePage} />
         <Route path={ROUTES.ACCOUNT} component={AccountPage} />
         <Route path={ROUTES.ADMIN} component={AdminPage} />

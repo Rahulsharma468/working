@@ -31,7 +31,7 @@ const NavigationAuth = ({ authUser }) => (
       <button className="btn"><Link style={{textDecoration:"none"}} to={ROUTES.ACCOUNT}>Account</Link></button>
       </li>
       <li>
-      <button className="btn"><Link style={{textDecoration:"none"}} to={ROUTES.ACCOUNT}>POST</Link></button>
+      <button className="btn"><Link style={{textDecoration:"none"}} to={ROUTES.POST_FORM}>POST</Link></button>
       </li>
       {!authUser.roles[ROLES.ADMIN] && (
         <li>
