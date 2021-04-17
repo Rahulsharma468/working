@@ -42,7 +42,8 @@ class formBase extends Component{
               <form onSubmit={this.onSubmit} className="form">
                 <input className="input"  name="recpeie" value={recpeie} onChange={this.onChange} type="text" placeholder="name"/><br />
                 <input className="input" name="requirments" value={requirments}  onChange={this.onChange} type="requirments" placeholder="requirments"/><br />
-                <input className="input" name="method" value={method} onChange={this.onChange} type="method" placeholder="method"/>
+                <textarea className="input" name="method" value={method} onChange={this.onChange} type="method" placeholder="method" rows='30'></textarea>
+                
                 <br />
                 <button className="btn"type="submit" disabled={isInvalid} onSubmit={this.onSubmit}>Submit</button>
               </form>
