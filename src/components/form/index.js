@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import { compose } from 'recompose';
 import { withRouter } from 'react-router-dom';
-import Firebase, { withFirebase } from '../Firebase';
+import { withFirebase } from '../Firebase';
 import './style.css';
-import firebase from "firebase";
-import { ADMIN } from '../../constants/routes';
-import { database, firestore, useFirebaseApp, useFirestoreCollection } from 'reactfire';
 import { dba } from '../Firebase/firebase';
+import * as ROUTES from '../../constants/routes';
 
 const Post_form =() =>  {
   return(
@@ -20,7 +18,8 @@ const Post_form =() =>  {
 const INITIAL_STATE = {
     recpeie: '' , 
     requirments: ''  , 
-    method: ''
+    method: '',
+    error: null
 }
 
 class formBase extends Component{
@@ -43,10 +42,11 @@ class formBase extends Component{
           method: [method],
           flag: 0
         })
-        .then(function() {
-          alert("Document successfully written!");
-      })
-      .catch(function(error) {
+        .then(() => {
+          this.setState({ ...INITIAL_STATE });
+          this.props.history.push(ROUTES.HOME);
+        })
+      .catch((error) => {
           alert("Error writing document: ", error);
       })
       };
