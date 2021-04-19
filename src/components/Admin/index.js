@@ -2,10 +2,9 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { compose } from 'recompose';
 import { withAuthorization } from '../Session';
-import { UserList, UserItem } from '../Users';
+import { UserList, UserItem , Datalist } from '../Users';
 import * as ROLES from '../../constants/roles';
 import * as ROUTES from '../../constants/routes';
-
 
 const AdminPage = () => (
   <div>
@@ -15,6 +14,7 @@ const AdminPage = () => (
       <Route exact path={ROUTES.ADMIN_DETAILS} component={UserItem} />
       <Route exact path={ROUTES.ADMIN} component={UserList} />
     </Switch>
+    <Datalist />
   </div>
 );
 
