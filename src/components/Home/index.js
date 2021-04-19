@@ -22,7 +22,7 @@ class HomePage extends Component{
   componentDidMount() {
     this.setState({ loading: true });
 
-    dba.collection("recipes")
+    dba.collection("recipes").where("flag","==",1)
     .get()
     .then(querySnapshot => {
     const data = querySnapshot.docs.map(doc => doc.data());
