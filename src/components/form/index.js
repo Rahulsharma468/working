@@ -40,7 +40,7 @@ class formBase extends Component{
           recipe: [recpeie],
           requirments: [requirments],
           method: [method],
-          flag: 0
+          flag: 1
         })
         .then(() => {
           this.setState({ ...INITIAL_STATE });
